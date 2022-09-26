@@ -1,0 +1,56 @@
+body{
+    animation: change 10s ease infinite;
+    background: linear-gradient(-45deg, green, yellow, blue, red)  no-repeat;
+    height: 100vh;
+}
+#kita{
+    width: 300px;
+    height: 300px;
+    background-color: rgb(14, 157, 228);
+
+    transition-property: background-color, border-radius;
+    transition-duration: 2s, 1.5s;
+    transition-timing-function: ease-out;
+}
+#kita>img{
+    width: 300px;
+    height: 300px;
+}
+#kita:hover{
+    background-color: rgb(47, 0, 255);
+    border-radius: 50%;
+}
+#box{
+    width: 200px;
+    height: 200px;
+    margin: 10px;
+
+    animation-name: walk;
+    animation-duration: 2s;
+    animation-iteration-count: infinite;
+    animation-direction: alternate-reverse;
+}
+#box>img{
+    width: 400px;
+    height: 400px;
+    position: absolute;
+}
+@keyframes walk {
+    50%{
+        transform: translateX(500px);
+    }
+    100%{
+        transform: translateY(-500px) translateX(500px);
+    }
+}
+@keyframes change {
+    0%{
+        background-position: 0 50%;
+    }
+    50%{
+        background-position: 100% 50%;
+    }
+    100%{
+        background-position: 0 50%;
+    }
+}
